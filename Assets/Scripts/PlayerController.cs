@@ -15,12 +15,13 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetButton("Horizontal"))
-        {
-            float movement = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-            _transform.position += new Vector3(movement, 0, 0);
-        }
+        if (!Input.GetButton("Horizontal")) return;
+        var movement = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        _transform.position += new Vector3(movement, 0, 0);
+    }
 
+    private void FixedUpdate()
+    {
         var position = _transform.position;
         position = new Vector3(Mathf.Clamp(position.x, -_screenWidth, _screenWidth), position.y, position.z);
         _transform.position = position;

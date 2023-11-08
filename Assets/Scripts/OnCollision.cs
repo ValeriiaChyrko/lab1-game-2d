@@ -10,6 +10,7 @@ public class OnCollision : MonoBehaviour
         
         _score += 1;
         Debug.Log("Бали: " + _score);
+        
         Destroy(other.gameObject);
     }
 }
