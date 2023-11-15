@@ -1,0 +1,4 @@
+repository "lab1-game-2d@Valeriia_Chyrko@cloud"
+  path "/"
+    br "/main"
+    co "/main"
